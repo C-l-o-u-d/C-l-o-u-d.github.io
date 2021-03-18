@@ -1,0 +1,29 @@
+<html>
+<head>
+  <script src="https://cdn.widget.swipelux.com/swipelux-sdk-v1.js"></script>
+  <script>
+    function onWidgetEvent(message) {
+      console.log('Received message ' +message.type);
+      console.log('Message payload: ' +message.payload);
+    }
+
+    function onLoad() {
+      const options = {apiKey: 'test-api-key'};
+      const widget = new Swipelux(
+            options, document.getElementById("widgetContainer"), onWidgetEvent
+      );
+      widget.init();
+
+    }
+  </script>
+  <style type="text/css">
+    .widgetContainer {
+      width: 600px;
+    }
+  </style>
+</head>
+<body onload="onLoad()">
+ddd
+<div id="widgetContainer" class="widgetContainer"></div>
+</body>
+</html>
